@@ -17,7 +17,7 @@ void calculateSquare( const vector<int>&input, vector<int>&output, int start, in
 }
 
 int main() {
-	const int numElements = 210000000;
+	const int numElements = 200000000;
 
 	vector<int> numbers(numElements);
 	for (int i = 0; i < numElements; ++i) {
@@ -30,7 +30,7 @@ int main() {
 	// single threaded results
 	auto startSingle = chrono::high_resolution_clock::now();
 	for (int i = 0; i < numElements; ++i) {
-		squares[i] = numbers[i] * sqrt(numbers[i]);
+		squares[i] = numbers[i] * numbers[i];
 	}
 	auto endSingle = chrono::high_resolution_clock::now();
 	chrono::duration<double> singleDuration = endSingle - startSingle;
